@@ -8,6 +8,7 @@ except ImportError:
     print 'You need to install the python ldap bindings to use this command.'
     print 'On Gentoo run: /usr/bin/emerge python-ldap -va'
     print 'On debian run: apt-get install python-ldap'
+    import sys
     sys.exit(1)
 
 import logging
