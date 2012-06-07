@@ -7,11 +7,10 @@ log = logging.getLogger(__name__)
 
 import ldap
 
-from . import Error
-from . import search
+import libldap
 
 
-class AuthenticationError(Error):
+class AuthenticationError(libldap.Error):
     pass
 
 
