@@ -33,7 +33,7 @@ class LdapUser(object):
         filter ='(cn=%s)' % username
         attributes = ['dn']
         try:
-            result = self._search(scope=ldap.SCOPE_SUBTREE, filter=filter, attributes=attributes, async=False)
+            result = self._search(scope=ldap.SCOPE_ONELEVEL, filter=filter, attributes=attributes, async=False)
             if result:
                 return True
             else:
@@ -50,7 +50,7 @@ class LdapUser(object):
         filter ='(cn=%s)' % username
         attributes = None
         try:
-            result = self._search(scope=ldap.SCOPE_SUBTREE, filter=filter, attributes=attributes, async=False)
+            result = self._search(scope=ldap.SCOPE_ONELEVEL, filter=filter, attributes=attributes, async=False)
             if result:
                 entry = libldap.dict_from_ldap_result(result[0])
                 return entry
